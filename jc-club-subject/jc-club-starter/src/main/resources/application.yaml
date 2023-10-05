@@ -1,0 +1,42 @@
+server:
+  port: 3000
+spring:
+  datasource:
+    username: root
+#    password: 123456
+    password: IbwMxYfyCofpfXjmwk9SIA0GAU2hWLW1nvA/Lk5kcsy9m5dd2f6qotSd1pOdj59jt2WjmI10hoG7jfmb2kme0g==
+#    jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/jc-club?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 20
+      min-idle: 20
+#      会根据publicKey解密   解密后的password。${publicKey}：公用变量
+      connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};
+      max-active: 100
+      max-wait: 60000
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: root
+        login-password: 123456
+      filter:
+        stat:
+#          开启过滤器
+          enabled: true
+#          执行时间大于2000毫秒的都是慢SQL
+          slow-sql-millis: 2000
+#          日志记录慢SQL
+          log-slow-sql: true
+#    防火墙
+        wall:
+          enabled: true
+#          开启druid的配置，才会去解密  密码
+        config:
+          enabled: true
+#公钥字符串
+publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIWjpaPnyNKCDTDDK9dcqgYczbYJRom/g2zfq8OFba/3XMd+ISzyysoOZ+rY1wfBgfBH/Bp1LOSop0TjupIgWpkCAwEAAQ==
+#log4j2配置生效
+logging:
+  config: classpath:log4j2-spring.xml
