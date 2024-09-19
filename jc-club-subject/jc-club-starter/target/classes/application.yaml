@@ -40,3 +40,7 @@ publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIWjpaPnyNKCDTDDK9dcqgYczbYJRom/g2zfq
 #log4j2配置生效
 logging:
   config: classpath:log4j2-spring.xml
+#把mybatis和sql交互的查询语句打印在控制台（此时sql的参数是用？占位）。infra/config：自定义的sql拦截器，和下面效果差不多，sql是完整的sql，
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

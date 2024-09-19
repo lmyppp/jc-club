@@ -20,7 +20,7 @@ public interface SubjectCategoryDao {
      * @param id 主键
      * @return 实例对象
      */
-    SubjectCategory queryById(Long id);
+    SubjectCategory queryById(Integer id);
 
     /**
      * 查询指定行数据
@@ -46,7 +46,7 @@ public interface SubjectCategoryDao {
      * @param subjectCategory 实例对象
      * @return 影响行数
      */
-    int insert(SubjectCategory subjectCategory);
+    int insert(@Param("subjectCategory") SubjectCategory subjectCategory);
 
     /**
      * 修改数据

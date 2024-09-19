@@ -26,7 +26,7 @@ public class SubjectCategoryServiceImpl implements SubjectCategoryService {
      * @return 实例对象
      */
     @Override
-    public SubjectCategory queryById(Long id) {
+    public SubjectCategory queryById(Integer id) {
         return this.subjectCategoryDao.queryById(id);
     }
 

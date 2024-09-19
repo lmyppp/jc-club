@@ -17,7 +17,7 @@ public interface SubjectCategoryService {
      * @param id 主键
      * @return 实例对象
      */
-    SubjectCategory queryById(Long id);
+    SubjectCategory queryById(Integer id);
 
     /**
      * 查询多条数据

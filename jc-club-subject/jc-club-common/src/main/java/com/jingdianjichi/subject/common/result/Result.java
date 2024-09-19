@@ -3,8 +3,10 @@ package com.jingdianjichi.subject.common.result;
 import com.jingdianjichi.subject.common.enums.ResultCodeEnum;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Result<T> {
+public class Result<T> implements Serializable {
     private Boolean success;
     private Integer code;
     private String message;

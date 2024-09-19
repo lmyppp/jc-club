@@ -1,0 +1,18 @@
+#springcloud集成nacos，需要有这个单独的yaml
+spring:
+  application:
+    name: jc-club-subject
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.70.132:8848
+        prefix: ${spring.application.name}
+        group: DEFAULT_GROUP
+        namespace:
+        file-extension: yaml
+      # 如下配置，把服务注册到nacos上
+      discovery:
+        enabled: true
+        server-addr: 192.168.70.132:8848

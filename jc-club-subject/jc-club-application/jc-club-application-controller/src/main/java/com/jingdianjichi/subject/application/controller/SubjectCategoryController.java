@@ -82,9 +82,6 @@ public class SubjectCategoryController {
                     .queryCategory(subjectCategoryBO);
             List<SubjectCategoryDTO> subjectCategoryDTOList = SubjectCategoryBOConverter
                     .INSTANCE.convertBoToDto(subjectCategoryBOList);
-            if (log.isInfoEnabled()) {
-                log.info("SubjectCategoryController.queryCategoryByPrimary.dto:{}", JSON.toJSONString(subjectCategoryDTOList));
-            }
             return Result.ok(subjectCategoryDTOList);
         } catch (Exception e) {
             log.error("SubjectCategoryController.queryCategoryByPrimary.dto:{}", e.getMessage(), e);
